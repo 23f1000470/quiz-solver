@@ -1,19 +1,33 @@
-# Autonomous Quiz Solver API
+---
+title: Quiz Solver API
+emoji: 🧠
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_file: app.py
+pinned: false
+---
 
-A stateless FastAPI endpoint that autonomously solves data-related quizzes using headless browser automation, file processing, and LLM reasoning.
+# Quiz Solver API
+
+An autonomous quiz solver that can process various file formats, perform data analysis, and solve complex quiz questions automatically.
 
 ## Features
 
-- **Headless Browser Automation**: JavaScript-rendered page extraction using Playwright
-- **Multi-format File Processing**: CSV, PDF, JSON, Images (with OCR), Text files
-- **LLM Reasoning Chain**: Gemini primary with fallback models
-- **Autonomous Chaining**: Follows quiz URLs until completion or timeout
-- **Stateless Operation**: No database required
-- **3-minute Timeout**: Complete solution within time constraints
+- ✅ JavaScript-rendered webpage scraping
+- ✅ Multi-format file processing (CSV, PDF, Excel, JSON, Images)
+- ✅ Data analysis and visualization
+- ✅ OCR with pytesseract
+- ✅ LLM reasoning with Gemini
+- ✅ Autonomous URL following
 
-## Installation
+## API Usage
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd quiz-solver
+Send POST requests to `/solve` endpoint:
+
+```json
+{
+  "email": "your-email@example.com",
+  "secret": "your-secret",
+  "url": "https://quiz-url.example.com"
+}
